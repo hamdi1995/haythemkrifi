@@ -1,0 +1,14 @@
+<h1> new  </h1>
+<%= form_for @post do |f| %>
+	<%= f.label:title %> </br>
+	<%= f.text_field:title %></br>
+ 	<%= f.label:body %> </br>
+ 	<%= f.text_area:body %></br>
+	
+	<div class="form-group">
+	        <%= f.label :category %>
+	        <%= f.select :category, Category.all.collect {|x| [x.name, x.id]}, {:include_blank => 'Select One'},class:'form-control' %>
+	    </div>
+	<%= f.submit "add post" %>
+
+<%end%>
